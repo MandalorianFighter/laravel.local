@@ -17,10 +17,10 @@ Route::get('/', function () {
     return 'main web-site page';
 });
 
-Route::get('/dir/test', function () {
-    return 'test page in dir category';
+Route::get('/post/{id}', function ($id) {
+    return 'post - ' . $id;
 });
 
-Route::get('/test', function () {
-    return 'test content';
+Route::get('/user/{name}', function ($name) {
+    return 'user - ' . $name;
 });
