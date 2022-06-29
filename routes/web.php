@@ -17,10 +17,10 @@ Route::get('/', function () {
     return 'main web-site page';
 });
 
-Route::get('/posts/page/{page?}', function ($page = 1) {
-    return 'Page number ' . $page;
-});
+Route::get('/post/{id}', function ($id) {
+    return 'Post id is ' . $id;
+})->where('id', '[0-9]+');
 
-Route::get('/users/city/{city?}', function ($city = 'London') {
-    return 'Something about ' . $city;
-});
+Route::get('/user/{id}', function ($id) {
+    return 'User id is ' . $id;
+})->where('id', '[0-9]+');
