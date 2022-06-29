@@ -17,22 +17,22 @@ Route::get('/', function () {
     return 'main web-site page';
 });
 
-Route::get('/user/{id}', function ($id) {
-    return 'User id is ' . $id;
-})->whereNumber('id');
-
 Route::get('/city/{name}', function ($name) {
     return 'City name is ' . $name;
 })->whereAlpha('name');
 
-Route::get('/user/all', function () {
-		return 'all';
-	});
+Route::prefix('user')->group(function () {
+Route::get('/{id}', function ($id) {
+    return 'User id is ' . $id;
+})->whereNumber('id');
 
-Route::get('/user/all/desc', function () {
-		return 'all desc';
-	});
-
-Route::get('/user/{name}/{id?}', function ($name, $id) {
-		return 'name id';
-	});
+Route::get('/all', function () {
+                return 'all';
+        });
+Route::get('/all/desc', function () {
+                return 'all desc';
+        });
+Route::get('/{name}/{id?}', function ($name, $id) {
+                return 'name id';
+        });
+});
