@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/city/{name}', function ($name) {
     return 'City name is ' . $name;
-})->whereAlpha('name');
+})->whereAlpha('name')->name('city.name');
 
 Route::prefix('user')->group(function () {
 Route::get('/{id}', function ($id) {
@@ -36,3 +36,4 @@ Route::get('/{name}/{id?}', function ($name, $id) {
                 return 'name id';
         });
 });
+
