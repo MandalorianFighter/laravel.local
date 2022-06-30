@@ -1,10 +1,10 @@
 <?php
 	namespace App\Http\Controllers;
 
-	class PostController extends Controller
+	class UserController extends Controller
 	{
-         public function show()
+         public function show($surname, $name)
 		{
-			return 'user show';
+			return "user show $surname $name";
 		}
 	}

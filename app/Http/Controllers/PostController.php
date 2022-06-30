@@ -3,8 +3,8 @@
 
 	class PostController extends Controller
 	{
-         public function show()
+         public function show($id)
 		{
-			return 'post show';
+			return 'post show' . $id;
 		}
 	}

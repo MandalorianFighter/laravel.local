@@ -20,8 +20,8 @@ Route::get('/', function () {
     return 'main web-site page';
 });
 
-Route::get('/post', [PostController::class, 'show']);
+Route::get('/post/{id}', [PostController::class, 'show']);
 
-Route::get('/user', [UserController::class, 'show']);
+Route::get('/user/{surname}/{name}', [UserController::class, 'show']);
 
 Route::get('/user/all', [UserController::class, 'all']);
