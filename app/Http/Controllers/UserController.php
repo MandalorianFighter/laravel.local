@@ -22,6 +22,6 @@
 
          public function show($surname, $name)
 		{
-			return "user show $surname $name";
+			return view('user.show', ['surname'=>$surname, 'name'=>$name]);
 		}
 	}
