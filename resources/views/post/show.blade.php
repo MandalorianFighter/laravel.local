@@ -4,6 +4,7 @@
 	</x-slot>
 <ul>	{{-- comment --}}
 @foreach ($text as $key=>$elem)
+       @continue($key === 2)
        @if ($loop->first) 
        <li class="first">{{ $loop->index + 1 }}<br>
 	{{ $elem }}</li><br>
@@ -14,7 +15,6 @@
        <li>{{ $loop->index + 1 }}<br>
         {{ $elem }}</li><br>
        @endif
-       @break($key === 2)
 @endforeach
 </ul>
 </x-layout>
