@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,23 +20,8 @@ Route::get('/', function () {
     return 'main web-site page';
 });
 
-Route::get('/city/{name}', function ($name) {
-    return 'City name is ' . $name;
-})->whereAlpha('name')->name('city.name');
+Route::get('/post', [PostController::class, 'show']);
 
-Route::prefix('user')->group(function () {
-Route::get('/{id}', function ($id) {
-    return 'User id is ' . $id;
-})->whereNumber('id');
+Route::get('/user', [UserController::class, 'show']);
 
-Route::get('/all', function () {
-                return 'all';
-        });
-Route::get('/all/desc', function () {
-                return 'all desc';
-        });
-Route::get('/{name}/{id?}', function ($name, $id) {
-                return 'name id';
-        });
-});
-
+Route::get('/user/all', [UserController::class, 'all']);
