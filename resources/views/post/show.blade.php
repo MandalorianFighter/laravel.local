@@ -16,5 +16,9 @@
         {{ $elem }}</li><br>
        @endif
 @endforeach
+
+@for ($i = 0; $i < 10; $i++)
+counter value: {{ $i }}<br>
+@endfor
 </ul>
 </x-layout>
