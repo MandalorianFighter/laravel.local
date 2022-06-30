@@ -16,12 +16,13 @@
                         if(!array_key_exists($name, $users)) {
                               return 'There is no such user, try again';
                         }
-                        return "User`s $name city is $users[$name]";
+                        
+                        return view('user.show', ['title'=>$name, 'text'=>$users[$name]]);
                 }
 
 
          public function show($surname, $name)
 		{
-			return view('user.show', ['surname'=>$surname, 'name'=>$name]);
+			return view('user.show', ['title'=>$surname, 'text'=>$name]);
 		}
 	}

@@ -5,6 +5,6 @@
 	{
          public function show()
 	        {
-			return view('post.show', ['name' => 'Yanush', 'surname' => 'Polishchuk']);
+			return view('post.show', ['title' => 'page title', 'text' => ['one', 'two', 'three', 'four', 'five']]);
 		}
 	}
