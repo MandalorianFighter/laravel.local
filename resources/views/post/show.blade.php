@@ -20,5 +20,9 @@
 @for ($i = 0; $i < 10; $i++)
 counter value: {{ $i }}<br>
 @endfor
+
+@php
+    echo 128;
+@endphp
 </ul>
 </x-layout>
