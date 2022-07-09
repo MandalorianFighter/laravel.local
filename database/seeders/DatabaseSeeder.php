@@ -23,21 +23,21 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-       DB::table('posts')->insert([
+       DB::table('users')->insert([
            [
-		'title' => Str::random(10),
-		'slug'  => Str::random(10),
-		'text'  => Str::random(50),
+		'name' => Str::random(10),
+		'surname'  => Str::random(10),
+		'email'  => Str::random(5) . '@' . Str::random(7) . '.com',
            ],
            [
-                'title' => Str::random(10),
-                'slug'  => Str::random(10),
-                'text'  => Str::random(50),
+                'name' => Str::random(10),
+                'surname'  => Str::random(10),
+                'email'  => Str::random(5) . '@' . Str::random(7) . '.com',
            ],
            [
-                'title' => Str::random(10),
-                'slug'  => Str::random(10),
-                'text'  => Str::random(50),
+                'name' => Str::random(10),
+                'surname'  => Str::random(10),
+                'email'  => Str::random(5) . '@' . Str::random(7) . '.com',
            ],
 	]);
     }
