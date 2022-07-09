@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,17 +28,26 @@ class DatabaseSeeder extends Seeder
            [
 		'name' => Str::random(10),
 		'surname'  => Str::random(10),
-		'email'  => Str::random(5) . '@' . Str::random(7) . '.com',
+		'email'  => Str::random(10).'@gmail.com',
+                'password' => Hash::make(Str::random(5)),
            ],
            [
                 'name' => Str::random(10),
                 'surname'  => Str::random(10),
-                'email'  => Str::random(5) . '@' . Str::random(7) . '.com',
+                'email'  => Str::random(10).'@gmail.com',
+                'password' => Hash::make(Str::random(5)),
            ],
            [
                 'name' => Str::random(10),
                 'surname'  => Str::random(10),
-                'email'  => Str::random(5) . '@' . Str::random(7) . '.com',
+                'email'  => Str::random(10).'@gmail.com',
+                'password' => Hash::make('12345'),
+           ],
+           [
+                'name' => Str::random(10),
+                'surname'  => Str::random(10),
+                'email'  => Str::random(10).'@gmail.com',
+                'password' => Hash::make('12345'),
            ],
 	]);
     }
