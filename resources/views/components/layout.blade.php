@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{{ $title }}</title>
+		<title>{{ isset($title) ? $title : 'some title'}}</title>
 	</head>
 	<body>
 		{{ $slot }}

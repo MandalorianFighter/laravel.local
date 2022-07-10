@@ -1,28 +1,13 @@
 <x-layout>
-	<x-slot:title>
-	{{ $title }} - site.com
-	</x-slot>
-<ul>	{{-- comment --}}
-@foreach ($text as $key=>$elem)
-       @continue($key === 2)
-       @if ($loop->first) 
-       <li class="first">{{ $loop->index + 1 }}<br>
-	{{ $elem }}</li><br>
-       @elseif (($loop->last))
-       <li class="last">{{ $loop->index + 1 }}<br>
-        {{ $elem }}</li><br>
-       @else
-       <li>{{ $loop->index + 1 }}<br>
-        {{ $elem }}</li><br>
-       @endif
-@endforeach
 
-@for ($i = 0; $i < 10; $i++)
-counter value: {{ $i }}<br>
-@endfor
+<title>Posts</title>
 
-@php
-    echo 128;
-@endphp
-</ul>
+	@foreach ($posts as $post)
+		<div>
+			<h2>{{ $post->title }}</h2>
+			<div>
+				{{ $post->post_slug }}
+			</div>
+		</div>
+	@endforeach
 </x-layout>

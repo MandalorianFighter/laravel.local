@@ -22,8 +22,8 @@ Route::get('/', function () {
 
 Route::get('/post/{id}', [PostController::class, 'show']);
 
-Route::get('/user/{name}', [UserController::class, 'userCity']);
+//Route::get('/user/{name}', [UserController::class, 'userCity']);
 
-Route::get('/user/{surname}/{name}', [UserController::class, 'show']);
+Route::get('/user/{id}', [UserController::class, 'show']);
 
 Route::get('/user/all', [UserController::class, 'all']);

@@ -7,6 +7,8 @@ class PostController extends Controller
 {
         public function show()
         {
-		return view('post.show', ['title' => 'page title', 'text' => ['one', 'two', 'three', 'four', 'five']]);
-	}
+		//$posts = DB::table('posts')->get();
+                $posts = DB::table('posts')->select('title', 'slug as post_slug')->get();
+                return view('post.show', ['posts' => $posts]);
+        }
 }
