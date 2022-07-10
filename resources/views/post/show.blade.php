@@ -6,7 +6,7 @@
 		<div>
 			<h2>{{ $post->title }}</h2>
 			<div>
-				{{ $post->post_slug }}
+				{{ $post->slug }}
 			</div>
 		</div>
 	@endforeach
