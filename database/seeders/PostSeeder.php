@@ -1,31 +1,29 @@
 <?php
-	namespace Database\Seeders;
-	
-	use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-	use Illuminate\Database\Seeder;
-	use Illuminate\Support\Str;
-        use Illuminate\Support\Facades\DB;
-	
-	class PostSeeder extends Seeder
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
+class PostSeeder extends Seeder
+{
+	public function run()
 	{
-		public function run()
-		{
-			DB::table('posts')->insert([
-				[
-					'title' => 'title 1',
-					'slug'  => 'post-1',
-					'text'  => 'text text text 1',
-				],
-				[
-					'title' => 'title 2',
-					'slug'  => 'post-2',
-					'text'  => 'text text text 2',
-				],
-				[
-					'title' => 'title 3',
-					'slug'  => 'post-3',
-					'text'  => 'text text text 3',
-				],
-			]);
-		}
+		DB::table('posts')->insert([
+			[
+				'title' => 'title 1',
+				'slug'  => 'post-1',
+			],
+			[
+				'title' => 'title 2',
+				'slug'  => 'post-2',
+			],
+			[
+				'title' => 'title 3',
+				'slug'  => 'post-3',
+			],
+		]);
 	}
+}

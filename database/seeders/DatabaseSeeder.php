@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-//use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-//use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 //use Illuminate\Support\Facades\DB;
 //use Illuminate\Support\Str;
-//use Illuminate\Support\Facades\Hash;
 
-use PostSeeder;
-use CommentSeeder;
+
+//use PostSeeder;
+//use UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
 		PostSeeder::class,
-		CommentSeeder::class,
+		UserSeeder::class,
 	]);
     }
 }

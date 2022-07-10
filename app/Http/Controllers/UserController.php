@@ -1,9 +1,11 @@
 <?php
-	namespace App\Http\Controllers;
 
-	class UserController extends Controller
-	{
-         public function userCity($name)
+namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+
+class UserController extends Controller
+{
+        public function userCity($name)
                 {
                         $users = [
 		             'user1' => 'city1',
@@ -16,7 +18,6 @@
                         if(!array_key_exists($name, $users)) {
                               return 'There is no such user, try again';
                         }
-                        
                         return view('user.show', ['title'=>$name, 'text'=>$users[$name]]);
                 }
 

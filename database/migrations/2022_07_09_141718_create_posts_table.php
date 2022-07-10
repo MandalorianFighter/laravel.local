@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+//use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -13,8 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('info_posts', function (Blueprint $table) {
-              $table->string('title')->unique()->change();
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('title')->default('write_here_title');
+            $table->string('slug')->default('write_here_slug');
+            $table->integer('likes')->nullable();
+            $table->dateTime('created_at')->nullable();
         });
     }
 
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-       Schema::table('info_posts', function (Blueprint $table) {
-              $table->string('title')->change();
-        });
+        Schema::dropIfExists('posts');
     }
 };
