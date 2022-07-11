@@ -9,10 +9,8 @@ class PostController extends Controller
         {
 		//$posts = DB::table('posts')->get();
                 $posts = DB::table('posts')
-		->where('id', '=', 3)
-		->orWhere(function($query) {
-		$query->where('likes', '<', 10);
-		})->get();
+		->whereIdOrSlug(1,'post-3')
+		->get();
                 return view('post.show', ['posts' => $posts]);
         }
 }

@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-//use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -19,7 +18,7 @@ return new class extends Migration
             $table->string('title')->default('write_here_title');
             $table->string('slug')->default('write_here_slug');
             $table->integer('likes')->nullable();
-            $table->dateTime('created_at')->nullable();
+            $table->dateTime('created_at')->useCurrent();
         });
     }
 
