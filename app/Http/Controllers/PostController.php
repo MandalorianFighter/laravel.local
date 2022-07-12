@@ -8,13 +8,10 @@ class PostController extends Controller
 {
         public function show()
         {
-		//$posts = DB::table('posts')->get();
-                $post = new Post;
-	
-	        $post->title = 'new_post_title';
-	        $post->slug  = 'new_post_text';
-	
-	        $post->save();
+		//$post = Post::find(5);
+                //$post->delete();
+                $post = Post::withTrashed()->where('id', 5)->restore();
+                
                 $posts = Post::all();
                 return view('post.show', ['posts' => $posts]);
         }
