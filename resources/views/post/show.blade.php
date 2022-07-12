@@ -14,6 +14,9 @@
                         <div>
                                User id is {{ $post->user_id }};
                         </div>
+                        <div>
+                              {{ $post->thumbnail }};
+                        </div>
 		</div>
 	@endforeach
 </x-layout>

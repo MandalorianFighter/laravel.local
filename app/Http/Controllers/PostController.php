@@ -10,7 +10,7 @@ class PostController extends Controller
         {
 		//$post = Post::find(5);
                 //$post->delete();
-                $post = Post::withTrashed()->where('id', 5)->restore();
+                //$post = Post::withTrashed()->where('id', 5)->restore();
                 
                 $posts = Post::all();
                 return view('post.show', ['posts' => $posts]);
