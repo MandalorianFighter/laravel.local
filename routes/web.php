@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthUserController;
+use App\Http\Controllers\ThumbnailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::get('/user/{id}', [UserController::class, 'show']);
 Route::get('/user/all', [UserController::class, 'all']);
 
 Route::get('/auth-users/{id}', [AuthUserController::class, 'show']);
+
+Route::get('/thumbnails/{id}', [ThumbnailController::class, 'show']);
