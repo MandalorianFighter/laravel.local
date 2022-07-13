@@ -7,11 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Thumbnail;
 use App\Models\Category;
+use App\Models\Comment;
 
 class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $with = ['comments'];
 
     public function thumbnail()
       {
@@ -26,5 +29,10 @@ class Post extends Model
     public function categories()
       {
 	return $this->belongsToMany(Category::class);
+      }
+
+    public function comments()
+      {
+        return $this->hasMany(Comment::class);
       }
 }

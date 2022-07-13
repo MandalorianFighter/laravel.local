@@ -22,7 +22,7 @@
 <a href="/categories/{{$category->id}}">{{ $category->name }}</a>;
 </div>
 @endforeach
-@foreach ($comments as $comment)
+@foreach ($post->comments as $comment)
 
 <p><div>User name: {{ $comment->user->name }}</div>
 <div>{{$comment->text}}</div></p>
