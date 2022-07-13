@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Thumbnail;
+use App\Models\Category;
 
 class Post extends Model
 {
@@ -15,5 +16,10 @@ class Post extends Model
     public function thumbnail()
       {
           return $this->hasOne(Thumbnail::class);
+      }
+
+    public function category()
+      {
+	  return $this->belongsTo(Category::class);
       }
 }

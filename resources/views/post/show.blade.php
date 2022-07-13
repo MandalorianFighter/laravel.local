@@ -17,6 +17,9 @@
                         <div>
                               {{ $post->thumbnail }};
                         </div>
+                        <div>
+                              {{ $post->category }};
+                        </div>
 		</div>
 	@endforeach
 </x-layout>
