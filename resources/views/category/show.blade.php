@@ -4,11 +4,11 @@
 
                 <div>
                         <h2>{{ $category->name }}</h2>
-                        
+
 @foreach ($category->posts as $post)
                 <div>
                         <h3><a href="/post/{{ $post->id }}">{{ $post->title }}</a></h3>
-                        
+
                         <div>
                              Post slug is "{{ $post->slug }}".
                         </div>
