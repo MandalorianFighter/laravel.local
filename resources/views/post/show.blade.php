@@ -24,7 +24,7 @@
 @endforeach
 @foreach ($comments as $comment)
 
-<p><div>User id is {{ $comment->user_id }}</div>
+<p><div>User name: {{ $comment->user->name }}</div>
 <div>{{$comment->text}}</div></p>
 @endforeach
 </x-layout>
