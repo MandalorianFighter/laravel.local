@@ -1,11 +1,10 @@
 <x-layout>
 
-<title>Posts</title>
+<title>Post - {{ $post->title }}</title>
 
-	@foreach ($posts as $post)
-		<div>
-			<h2>{{ $post->title }}</h2>
-			<div>
+
+
+                        <div>
 				Post slug is {{ $post->slug }};
 			</div>
                         <div>
@@ -20,6 +19,10 @@
                         <div>
                               {{ $post->category }};
                         </div>
-		</div>
-	@endforeach
+
+@foreach ($comments as $comment)
+
+<p><div>User id is {{ $comment->user_id }}</div>
+<div>{{$comment->text}}</div></p>
+@endforeach
 </x-layout>
