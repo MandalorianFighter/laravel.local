@@ -3,7 +3,7 @@
 <title>Post - {{ $post->title }}</title>
 
 
-
+<h2>{{ $post->title }}</h2>
                         <div>
 				Post slug is {{ $post->slug }};
 			</div>
@@ -16,10 +16,12 @@
                         <div>
                               {{ $post->thumbnail }};
                         </div>
-                        <div>
-                              {{ $post->category }};
-                        </div>
-
+<h3>Related categories</h3>
+@foreach ($post->categories as $category) 
+<div>
+<a href="/categories/{{$category->id}}">{{ $category->name }}</a>;
+</div>
+@endforeach
 @foreach ($comments as $comment)
 
 <p><div>User id is {{ $comment->user_id }}</div>

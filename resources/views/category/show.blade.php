@@ -7,7 +7,7 @@
                         
 @foreach ($category->posts as $post)
                 <div>
-                        <h3>{{ $post->title }}</h3>
+                        <h3><a href="/post/{{ $post->id }}">{{ $post->title }}</a></h3>
                         
                         <div>
                              Post slug is "{{ $post->slug }}".
