@@ -37,6 +37,4 @@ Route::get('/thumbnails/{id}', [ThumbnailController::class, 'show']);
 
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
 
-Route::get('/form', [PostController::class, 'form']);
-
-Route::post('/result', [PostController::class, 'result']);
+Route::match(['get', 'post'], '/form', [PostController::class, 'form']);

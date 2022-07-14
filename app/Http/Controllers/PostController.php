@@ -24,8 +24,15 @@ class PostController extends Controller
 	return view('post.result', [ 'title' => $title, 'slug' => $slug ]);
 	}
 
-	public function form()
+	public function form(Request $request)
 	{
+            if($request->has('title') and $request->has('slug')) {
+        $title = $request->input('title');
+        $slug  = $request->input('slug');
+
+        return view('post.form', [ 'title' => $title, 'slug' => $slug ]);
+            }
+
  	    return view('post.form');
 	}
 }
