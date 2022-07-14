@@ -39,4 +39,4 @@ Route::get('/categories/{id}', [CategoryController::class, 'show']);
 
 Route::get('/form', [PostController::class, 'form']);
 
-Route::get('/result', [PostController::class, 'result']);
+Route::post('/result', [PostController::class, 'result']);
