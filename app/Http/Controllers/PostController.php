@@ -23,7 +23,7 @@ class PostController extends Controller
 
         //return view('post.form', [ 'title' => $title, 'slug' => $slug ]);
             //}
-            $data = $request->only(['title', 'text']);
+            $data = $request->except(['text', 'slug']);
  	    return view('post.form', [ 'data' => $data ]);
 	}
 }
