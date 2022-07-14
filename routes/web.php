@@ -36,3 +36,7 @@ Route::get('/auth-users/{id}', [AuthUserController::class, 'show']);
 Route::get('/thumbnails/{id}', [ThumbnailController::class, 'show']);
 
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
+
+Route::get('/form', [PostController::class, 'form']);
+
+Route::get('/result', [PostController::class, 'result']);
