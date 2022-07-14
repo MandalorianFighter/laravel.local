@@ -5,7 +5,8 @@
 	<input type="submit">
 </form>
 
-@if (isset($title) and isset($slug))
-<h2>{{ $title }}</h2>
-<p>{{ $slug }}</p>
+@if (isset($data))
+@foreach ($data as $key=>$item)
+<p>{{ $key }} => {{ $item }}</p>
+@endforeach
 @endif
