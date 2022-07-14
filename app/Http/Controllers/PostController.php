@@ -17,13 +17,11 @@ class PostController extends Controller
 
 	public function form(Request $request)
 	{
-            //if($request->has('title') and $request->has('slug')) {
-        //$title = $request->input('title');
-        //$slug  = $request->input('slug');
+            //$data = $request->except(['text', 'slug']);
 
-        //return view('post.form', [ 'title' => $title, 'slug' => $slug ]);
-            //}
-            $data = $request->except(['text', 'slug']);
- 	    return view('post.form', [ 'data' => $data ]);
+            $title = $request->input('text.title');
+	    $slug = $request->input('text.slug');
+            $text = $request->input('text.text');
+ 	    return view('post.form', [ 'title' => $title, 'slug' => $slug, 'text' => $text ]);
 	}
 }
