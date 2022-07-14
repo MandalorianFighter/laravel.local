@@ -19,9 +19,14 @@ class PostController extends Controller
 	{
             //$data = $request->except(['text', 'slug']);
 
+            if ($request->isMethod('post')) {
+            $path = 'POST';
+            } elseif ($request->isMethod('get')) {
+            $path = 'GET';
+            }
             $title = $request->input('text.title');
 	    $slug = $request->input('text.slug');
             $text = $request->input('text.text');
- 	    return view('post.form', [ 'title' => $title, 'slug' => $slug, 'text' => $text ]);
+ 	    return view('post.form', [ 'title' => $title, 'slug' => $slug, 'text' => $text, 'path' => $path ]);
 	}
 }
