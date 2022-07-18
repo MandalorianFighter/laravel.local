@@ -10,7 +10,7 @@
         <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
-    <a href="{{ route('welcome') }}">Home</a>
+    <a href="{{ route('main') }}">Home</a>
     <a href="{{ route('posts.index') }}">Posts</a>
     <a href="{{ route('users.index') }}">Users</a>
         <div class="container mt-4">

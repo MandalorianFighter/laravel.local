@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{{ isset($title) ? $title : 'some title'}}</title>
+		<title>{{ $title }}</title>
 	</head>
 	<body>
-		{{ $slot }}
+		<div class="wrapper">
+<x-header />
+<x-alert>
+	text alert text
+</x-alert>
+			<main>
+				{{ $slot }}
+			</main>
+<x-footer />
+<x-footer.info />
+		</div>
 	</body>
 </html>

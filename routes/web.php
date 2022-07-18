@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthUserController;
 use App\Http\Controllers\ThumbnailController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +19,7 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return 'main web-site page';
-})->name('welcome');
+Route::get('/', [MainController::class, 'index'])->name('main');
 
 Route::resource('posts', PostController::class);
 
