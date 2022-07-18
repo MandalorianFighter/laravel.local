@@ -6,12 +6,7 @@
 	<body>
 		<div class="wrapper">
 <x-header />
-<x-alert>
-<x-slot:type>
-	error
-</x-slot>
-	text alert text
-</x-alert>
+<x-alert type="error" message="text" />
 <x-nav />
 			<main>
 				{{ $slot }}
