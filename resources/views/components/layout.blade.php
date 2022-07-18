@@ -12,6 +12,7 @@
 </x-slot>
 	text alert text
 </x-alert>
+<x-nav />
 			<main>
 				{{ $slot }}
 			</main>

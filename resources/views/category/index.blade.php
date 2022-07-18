@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
-@section('title', $category->name . ' category')
+@section('title', 'Categories')
 
-@section('header', $category->name)
+@section('header', 'Categories')
 
 @section('content')
+
+@foreach ($categories as $category)
+                <div>
+                        <h2><a href="{{ route('categories.show', $category->id) }}">{{ $category->name }}</a></h2>
 @foreach ($category->posts as $post)
                 <div>
                         <h3><a href="/post/{{ $post->id }}">{{ $post->title }}</a></h3>
@@ -17,4 +21,7 @@
                         </div>
                 </div>
         @endforeach
+
+                </div>
+@endforeach
 @endsection

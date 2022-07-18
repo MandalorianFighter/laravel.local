@@ -31,6 +31,8 @@ Route::get('/auth-users/{id}', [AuthUserController::class, 'show']);
 
 Route::get('/thumbnails/{id}', [ThumbnailController::class, 'show']);
 
-Route::get('/categories/{id}', [CategoryController::class, 'show']);
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+
+Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
 
 Route::match(['get', 'post'], '/form', [PostController::class, 'form']);
