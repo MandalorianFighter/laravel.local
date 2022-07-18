@@ -7,6 +7,9 @@
 		<div class="wrapper">
 <x-header />
 <x-alert>
+<x-slot:type>
+	error
+</x-slot>
 	text alert text
 </x-alert>
 			<main>
