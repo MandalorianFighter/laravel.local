@@ -21,15 +21,13 @@ use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return 'main web-site page';
-});
+})->name('welcome');
 
-Route::get('/post/{id}', [PostController::class, 'show']);
+Route::resource('posts', PostController::class);
 
-//Route::get('/user/{name}', [UserController::class, 'userCity']);
+Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 
-Route::get('/user/{id}', [UserController::class, 'show']);
-
-Route::get('/user/all', [UserController::class, 'all']);
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/auth-users/{id}', [AuthUserController::class, 'show']);
 

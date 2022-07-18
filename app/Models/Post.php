@@ -15,6 +15,7 @@ class Post extends Model
     use SoftDeletes;
 
     protected $with = ['comments'];
+    protected $fillable = ['title', 'slug'];
 
     public function thumbnail()
       {

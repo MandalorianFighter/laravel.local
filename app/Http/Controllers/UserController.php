@@ -7,13 +7,18 @@ use App\Models\User;
 class UserController extends Controller
 {
 
-public function show()
+public function index()
 {
-        DB::table('users')
-		->increment('salary', 500);
-	$users = User::all();
+	$users = User::paginate();
 
-        return view('user.show', ['users' => $users]);
+        return view('user.index', ['users' => $users]);
+}
+
+public function show($id)
+{
+        $user = User::findOrFail($id);
+
+        return view('user.show', ['user' => $user]);
 }
 
 }

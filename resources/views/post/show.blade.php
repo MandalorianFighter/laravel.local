@@ -1,21 +1,23 @@
-<x-layout>
+@extends('layouts.app')
 
-<title>Post - {{ $post->title }}</title>
+@section('title', $post->title)
 
+@section('header', $post->title )
+@section('content')
 
-<h2>{{ $post->title }}</h2>
-                        <div>
-				Post slug is {{ $post->slug }};
-			</div>
-                        <div>
-                               Post is created at {{ $post->created_at }};
-                        </div>
-                        <div>
-                               User id is {{ $post->user_id }};
-                        </div>
-                        <div>
-                              {{ $post->thumbnail }};
-                        </div>
+<div>
+	Post slug is {{ $post->slug }};
+</div>
+<div>
+        Post is created at {{ $post->created_at }};
+</div>
+<div>
+        User id is {{ $post->user_id }};
+</div>
+<div>
+        {{ $post->thumbnail }};
+</div>
+
 <h3>Related categories</h3>
 @foreach ($post->categories as $category) 
 <div>
@@ -27,4 +29,4 @@
 <p><div>User name: {{ $comment->user->name }}</div>
 <div>{{$comment->text}}</div></p>
 @endforeach
-</x-layout>
+@endsection
