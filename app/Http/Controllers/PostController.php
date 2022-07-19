@@ -12,7 +12,7 @@ class PostController extends Controller
         public function index(Request $request)
     {
         $posts = Post::paginate(3);
-        $request->session()->put('key', 'value');
+        $request->session()->put('count', 0);
         return view('post.index', compact('posts'));
     }
 
@@ -41,7 +41,13 @@ class PostController extends Controller
         public function show(Request $request, $id)
     {
         $post = Post::find($id);
-        $value = $request->session()->get('key');
+
+        $value = $request->session()->get('count');
+
+        if($value !== null) {
+        $value++;
+        $request->session()->put('count', $value);
+        }
         return view('post.show', compact('post', 'value'));
     }
 
