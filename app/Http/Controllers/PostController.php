@@ -9,10 +9,10 @@ class PostController extends Controller
 {
 
 
-        public function index()
+        public function index(Request $request)
     {
         $posts = Post::paginate(3);
-
+        $request->session()->put('key', 'value');
         return view('post.index', compact('posts'));
     }
 
@@ -38,10 +38,11 @@ class PostController extends Controller
     }
 
 
-        public function show($id)
+        public function show(Request $request, $id)
     {
         $post = Post::find($id);
-        return view('post.show', compact('post'));
+        $value = $request->session()->get('key');
+        return view('post.show', compact('post', 'value'));
     }
 
         public function edit($id)

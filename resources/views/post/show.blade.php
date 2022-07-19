@@ -29,4 +29,5 @@
 <p><div>User name: {{ $comment->user->name }}</div>
 <div>{{$comment->text}}</div></p>
 @endforeach
+{{ $value }}
 @endsection
