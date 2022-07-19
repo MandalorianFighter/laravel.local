@@ -54,12 +54,15 @@ class PostController extends Controller
         }
         $first = $request->session()->get('first');
         $next = $request->session()->get('next');
+        //$value = $request->session()->pull('count');
+        $value = $request->session()->pull('count', 'default');
         return view('post.show', compact('post', 'value', 'first', 'next'));
     }
 
-        public function edit($id)
+        public function edit(Request $request, $id)
     {
         $post = Post::findOrFail($id);
+        $request->session()->forget('count');
         return view('post.edit', compact('post'));
     }
 
