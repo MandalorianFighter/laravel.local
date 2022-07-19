@@ -12,7 +12,9 @@ class PostController extends Controller
         public function index(Request $request)
     {
         $posts = Post::paginate(3);
-        $request->session()->put('count', 0);
+        $request->session()->put('count', 1);
+        $request->session()->put('value', 'default');
+        $request->session()->put('key', 'data');
         return view('post.index', compact('posts'));
     }
 
@@ -42,21 +44,9 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        $value = $request->session()->get('count');
+        $value = $request->session()->all();
 
-        if($value !== null) {
-        if($value < 1) {
-        $request->session()->put('first', date('H:i:s d.m.Y'));
-        }
-        $value++;
-        $request->session()->put('count', $value);
-        $request->session()->put('next', date('H:i:s d.m.Y'));
-        }
-        $first = $request->session()->get('first');
-        $next = $request->session()->get('next');
-        //$value = $request->session()->pull('count');
-        $value = $request->session()->pull('count', 'default');
-        return view('post.show', compact('post', 'value', 'first', 'next'));
+        return view('post.show', compact('post', 'value'));
     }
 
         public function edit(Request $request, $id)
