@@ -15,7 +15,7 @@ class PostController extends Controller
         $request->session()->put('count', 1);
         $request->session()->put('value', 'default');
         $request->session()->put('key', 'data');
-        $request->session()->put('new', ['a', 'b', 'c']);
+        session(['arbitrage' => 'neokonformist']);
         return view('post.index', compact('posts'));
     }
 
@@ -44,8 +44,7 @@ class PostController extends Controller
         public function show(Request $request, $id)
     {
         $post = Post::find($id);
-
-        $request->session()->push('new', 'd');
+        session('arbitrage', 'default');
         $value = $request->session()->all();
 
         return view('post.show', compact('post', 'value'));
