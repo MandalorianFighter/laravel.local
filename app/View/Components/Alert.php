@@ -28,9 +28,6 @@ class Alert extends Component
      */
     public function render()
     {
-        return view('components.alert', [
-		'type' => $this->type,
-		'message' => $this->message,
-	]);
+        return view('components.alert');
     }
 }
