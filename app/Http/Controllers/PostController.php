@@ -1,21 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-//use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use Illuminate\Http\Request;
-//use Illuminate\Http\Response;
 
 class PostController extends Controller
 {
 
         public function get()
     {
-        return response('Hello World', 200)->withHeaders([
-				'Content-Type' => 'text/plain',
-				'X-Header-One' => 'value',
-				'X-Header-Two' => 'value',
-			]);
+        return response()
+	->view('main.index')
+	->header('Content-Type', 'text/plain');
     }
 
         public function index(Request $request)
