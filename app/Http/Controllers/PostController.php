@@ -10,7 +10,7 @@ class PostController extends Controller
 
         public function get1()
     {
-      return redirect()->route('categories');
+      return redirect()->route('categories.show', ['id' => 1]);
     }
 
         public function index(Request $request)
