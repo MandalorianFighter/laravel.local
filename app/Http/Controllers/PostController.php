@@ -45,10 +45,16 @@ class PostController extends Controller
         $value = $request->session()->get('count');
 
         if($value !== null) {
+        if($value < 1) {
+        $request->session()->put('first', date('H:i:s d.m.Y'));
+        }
         $value++;
         $request->session()->put('count', $value);
+        $request->session()->put('next', date('H:i:s d.m.Y'));
         }
-        return view('post.show', compact('post', 'value'));
+        $first = $request->session()->get('first');
+        $next = $request->session()->get('next');
+        return view('post.show', compact('post', 'value', 'first', 'next'));
     }
 
         public function edit($id)
@@ -78,7 +84,6 @@ class PostController extends Controller
             $post->delete();
         }
 
-        //$post->delete();
         return redirect()->route('posts.index');
     }
 

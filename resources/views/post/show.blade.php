@@ -29,5 +29,9 @@
 <p><div>User name: {{ $comment->user->name }}</div>
 <div>{{$comment->text}}</div></p>
 @endforeach
-{{ $value }}
+<p>Quantity of page refreshes: {{ $value }}</p>
+@if (isset($first))
+<p>Time of the first page refresh: {{ $first }}</p>
+<p>Time of the last page refresh: {{ $next }}</p>
+@endif
 @endsection
