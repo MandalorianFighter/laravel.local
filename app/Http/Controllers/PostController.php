@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 //use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use App\Http\Controllers\MainController;
 
 class PostController extends Controller
 {
 
         public function get1()
     {
-      return redirect()->action([MainController::class, 'index']);
+      return redirect()->route('categories');
     }
 
         public function index(Request $request)
