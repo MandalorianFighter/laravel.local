@@ -11,7 +11,11 @@ class PostController extends Controller
 
         public function get()
     {
-        return response('Found anything interesting', '200');
+        return response('Hello World', 200)->withHeaders([
+				'Content-Type' => 'text/plain',
+				'X-Header-One' => 'value',
+				'X-Header-Two' => 'value',
+			]);
     }
 
         public function index(Request $request)
