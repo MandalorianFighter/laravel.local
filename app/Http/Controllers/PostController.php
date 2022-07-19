@@ -15,6 +15,7 @@ class PostController extends Controller
         $request->session()->put('count', 1);
         $request->session()->put('value', 'default');
         $request->session()->put('key', 'data');
+        $request->session()->put('new', ['a', 'b', 'c']);
         return view('post.index', compact('posts'));
     }
 
@@ -44,6 +45,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
+        $request->session()->push('new', 'd');
         $value = $request->session()->all();
 
         return view('post.show', compact('post', 'value'));
