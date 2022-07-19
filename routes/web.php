@@ -21,6 +21,10 @@ use App\Http\Controllers\MainController;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 
+Route::get('/posts/get1', [PostController::class, 'get1']);
+
+Route::get('/posts/get2', [PostController::class, 'get2']);
+
 Route::resource('posts', PostController::class);
 
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
