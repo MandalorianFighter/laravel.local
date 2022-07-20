@@ -3,15 +3,25 @@
 namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Cookie;
 
 class PostController extends Controller
 {
 
-        public function get()
+        public function set()
     {
-        return response()
-	->view('main.index')
-	->header('Content-Type', 'text/plain');
+        Cookie::queue('name', 'value', 10);
+        Cookie::queue('item', 'info', 10);
+        Cookie::queue('num', '129', 10);
+        return response('text');
+    }
+
+        public function get(Request $request)
+    {
+        $name = $request->cookie('name');
+        $item = $request->cookie('item');
+        $num = $request->cookie('num');
+        return "$name, $item, $num";
     }
 
         public function index(Request $request)

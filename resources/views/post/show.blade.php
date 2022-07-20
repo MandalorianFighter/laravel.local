@@ -29,8 +29,8 @@
 <p><div>User name: {{ $comment->user->name }}</div>
 <div>{{$comment->text}}</div></p>
 @endforeach
-<p>Session data</p>
+<p>Session content</p>
 @foreach($value as $key=>$item)
-{{ $key }} => {{ print_r($item) }} <br>
+<p>{{ $key }} => {{ print_r($item) }}</p>
 @endforeach
 @endsection

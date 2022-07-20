@@ -21,6 +21,8 @@ use App\Http\Controllers\MainController;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 
+Route::get('/posts/set', [PostController::class, 'set']);
+
 Route::get('/posts/get', [PostController::class, 'get']);
 
 Route::resource('posts', PostController::class);
