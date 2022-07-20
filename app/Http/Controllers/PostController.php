@@ -10,18 +10,19 @@ class PostController extends Controller
 
         public function set()
     {
-        Cookie::queue('name', 'value', 10);
-        Cookie::queue('item', 'info', 10);
-        Cookie::queue('num', '129', 10);
-        return response('text');
+        $posts = Post::paginate(3);
+        return response()
+		->view('post.index', compact('posts'))
+		->cookie('name', 'item', 10)
+		->header('Content-Type', 'text/plain');
     }
 
         public function get(Request $request)
     {
         $name = $request->cookie('name');
-        $item = $request->cookie('item');
-        $num = $request->cookie('num');
-        return "$name, $item, $num";
+        //$item = $request->cookie('item');
+        //$num = $request->cookie('num');
+        return $name;
     }
 
         public function index(Request $request)
